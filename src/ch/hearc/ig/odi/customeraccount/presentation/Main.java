@@ -43,8 +43,8 @@ public class Main {
         Account.transfer(1000, c2.getAccountByNumber("10-352790-1"), c1.getAccountByNumber("10-195966-0"));
 
         // Affichage des clients et leurs comptes
-        c1.sePresenter();
-        c2.sePresenter();
+        /*c1.sePresenter();
+        c2.sePresenter();*/
 
     }
 
