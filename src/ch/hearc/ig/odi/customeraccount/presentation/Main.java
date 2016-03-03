@@ -6,6 +6,7 @@
 package ch.hearc.ig.odi.customeraccount.presentation;
 
 import ch.hearc.ig.odi.customeraccount.business.Account;
+import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 
 /**
@@ -18,7 +19,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Création de 2 clients test
+       /* // Création de 2 clients test
         Customer c1 = new Customer(1, "Jérémy", "Bärfus");
         c1.addAcount("10-195966-0", "Compte courant", 0.01);
         c1.addAcount("62-524812-1", "Compte épargne", 0.25);
@@ -45,7 +46,19 @@ public class Main {
         // Affichage des clients et leurs comptes
         /*c1.sePresenter();
         c2.sePresenter();*/
-
+        
+        Bank b = new Bank(1, "UBS");
+        Customer c = new Customer(3, "Lola", "Wilfried");
+        
+        b.addCustomer(1, "Klett", "Boris");
+        b.addCustomer(2, "Barfuss", "Jeremy");
+        b.addNewAccount("c1", "compte 1", 0.1, c);
+        
+        System.out.println(b.getCustomers().size()+"\n\n\n");
+        System.out.println("Banque: "+b.getName()+"\n\n");
+        System.out.println("Client 1: "+b.getCustomerByNumber(1).getFirstName()+", "+b.getCustomerByNumber(1).getLastName()+". Nb de comptes: "+b.getCustomerByNumber(1).getAccounts().size()+"\n");
+        System.out.println("Client 2: "+b.getCustomerByNumber(2).getFirstName()+", "+b.getCustomerByNumber(2).getLastName()+". Nb de comptes: "+b.getCustomerByNumber(2).getAccounts().size()+"\n");
+        System.out.println("Client 3: "+b.getCustomerByNumber(3).getFirstName()+", "+b.getCustomerByNumber(3).getLastName()+". Nb de comptes: "+b.getCustomerByNumber(3).getAccounts().size()+"\n");
     }
 
 }
